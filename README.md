@@ -8,7 +8,7 @@
     cd mynewproject
     git clone -b edge git@github.com:Skookum/node-boilerplate.git .
     git checkout -b mynewproject
-    sudo npm bundle
+    ./setup
     sudo node server.js
   
 ## Installation (user)
@@ -17,7 +17,7 @@
     cd mynewproject
     git clone -b edge https://github.com/skookum/node-boilerplate.git .
     git checkout -b mynewproject
-    sudo npm bundle
+    ./setup
     sudo node server.js
 
 ## Adding libraries
