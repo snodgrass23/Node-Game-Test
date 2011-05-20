@@ -6,7 +6,7 @@
 
     mkdir mynewproject
     cd mynewproject
-    git clone -b edge git@github.com:Skookum/node-boilerplate.git .
+    git clone git@github.com:Skookum/node-boilerplate.git .
     git checkout -b mynewproject
     ./setup
     sudo node server.js
@@ -15,7 +15,7 @@
 
     mkdir mynewproject
     cd mynewproject
-    git clone -b edge https://github.com/skookum/node-boilerplate.git .
+    git clone https://github.com/skookum/node-boilerplate.git .
     git checkout -b mynewproject
     ./setup
     sudo node server.js
