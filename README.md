@@ -4,8 +4,7 @@
 
 ## Installation (contributor)
 
-    mkdir mynewproject
-    cd mynewproject
+    mkdir mynewproject && cd mynewproject
     git clone git@github.com:Skookum/node-boilerplate.git .
     git checkout -b mynewproject
     ./setup
@@ -13,8 +12,7 @@
   
 ## Installation (user)
 
-    mkdir mynewproject
-    cd mynewproject
+    mkdir mynewproject && cd mynewproject
     git clone https://github.com/skookum/node-boilerplate.git .
     git checkout -b mynewproject
     ./setup
