@@ -16,5 +16,5 @@ echo "Running npm bundle..."
 
 sudo npm bundle
 
-echo "Setup complete."
-echo "sudo node server.js"
+echo ""
+echo "Setup complete! Run with: sudo node server.js"

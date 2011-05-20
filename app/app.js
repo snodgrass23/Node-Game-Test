@@ -1,22 +1,22 @@
 // Establish a working directory
 
-var root = require('path').normalize(__dirname + '/../../');
+var root = require('path').normalize(__dirname + '/../');
 
 // Modules
 
 var express = require('express'),
     connectTimeout = require('connect-timeout'),
-    context = require('../../lib/context'),
+    context = require('../lib/context'),
     stylus = require('stylus');
 
-require('../../lib/math.uuid');
+require('../lib/math.uuid');
 
 // Server export
 
 exports = module.exports = (function() {
   
   var server = express.createServer(),
-      options = require('./options')([server.set('env')]);
+      options = require('./config/options')([server.set('env')]);
 
   console.log("Environment: " + server.set('env'));
   
@@ -38,7 +38,8 @@ exports = module.exports = (function() {
     server.use(connectTimeout({ time: options.reqTimeout }));
     server.use(stylus.middleware({
       src: server.set('views') + '/stylus',
-      dest: server.set('public')
+      dest: server.set('public') + '/styles',
+      debug: true
     }));
     server.use(express.static(server.set('public')));
     server.use(express.cookieParser());
@@ -57,11 +58,11 @@ exports = module.exports = (function() {
     
     // Helpers
     
-    require('./helpers')(server)
+    require('./config/helpers')(server)
     
     // Map routes
     
-    require('./routes')(server)
+    require('./config/routes')(server)
 
   })
   
@@ -85,7 +86,7 @@ exports = module.exports = (function() {
   
   // Handle errors
   
-  require('./errors.js')(server)
+  require('./config/errors.js')(server)
     
   // Export the server
   
