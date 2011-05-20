@@ -2,18 +2,10 @@
       
   Structure for your [node.js](http://nodejs.org) project.
 
-## Installation (contributor)
+## Installation
 
     mkdir mynewproject && cd mynewproject
-    git clone git@github.com:Skookum/node-boilerplate.git .
-    git checkout -b mynewproject
-    ./setup
-    sudo node server.js
-  
-## Installation (user)
-
-    mkdir mynewproject && cd mynewproject
-    git clone https://github.com/skookum/node-boilerplate.git .
+    git clone git://github.com/hunterloftis/node-boilerplate.git .
     git checkout -b mynewproject
     ./setup
     sudo node server.js
