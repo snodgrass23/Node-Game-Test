@@ -1,6 +1,6 @@
 // Establish a working directory
 
-var root = require('path').normalize(__dirname + '/../');
+var root = require('path').normalize(__dirname + '/..');
 
 // Modules
 
@@ -37,9 +37,12 @@ exports = module.exports = (function() {
     
     server.use(connectTimeout({ time: options.reqTimeout }));
     server.use(stylus.middleware({
-      src: server.set('views') + '/stylus',
-      dest: server.set('public') + '/styles',
-      debug: true
+      src: server.set('views'),
+      dest: server.set('public'),
+      debug: true,
+      compileMethod: function(str) {
+        return stylus(str).set('compress', options.compressCss);
+      }
     }));
     server.use(express.static(server.set('public')));
     server.use(express.cookieParser());

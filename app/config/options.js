@@ -6,18 +6,19 @@ exports = module.exports = function(env) {
   
   var option_tables = {
     development: function() {
-      this.maxAge = 14 * 24 * 60 * 60 * 1000         // Two weeks   // Time before a session goes stale
-      this.shortSession = 12 * 24 * 60 * 60 * 1000    // We no longer have a short session option 1000 * 60 * 60 * 60         // 60 minutes
-      this.reqTimeout = 30000
-      this.sessionKey = 'session'
-      this.host = 'http://localhost:3100'
-      this.port = 3100
-      this.dumpExceptions = true
-      this.showStack = true
-      this.errorToHtml = true
-      //this.redis = { host: 'localhost', port: 6379, db: 'clickdummy' }
-      //this.mongo = { db: 'mongodb://localhost/passport'}
-      //this.mysql = { host: 'localhost', port: 3306, user: 'root', password: 'root', database: 'clickdummy' }
+      this.maxAge = 14 * 24 * 60 * 60 * 1000;         // Two weeks   // Time before a session goes stale
+      this.shortSession = 12 * 24 * 60 * 60 * 1000;    // We no longer have a short session option 1000 * 60 * 60 * 60         // 60 minutes
+      this.reqTimeout = 30000;
+      this.sessionKey = 'session';
+      this.host = 'http://localhost:3100';
+      this.port = 3100;
+      this.dumpExceptions = true;
+      this.showStack = true;
+      this.errorToHtml = true;
+      this.compressCss = true;
+      //this.redis = { host: 'localhost', port: 6379, db: 'myproject' }
+      //this.mongo = { db: 'mongodb://localhost/myproject'}
+      //this.mysql = { host: 'localhost', port: 3306, user: 'root', password: 'root', database: 'myproject' }
     },
     staging: function() {
       this.host = 'http://clickdummy.skookumlabs.com'
