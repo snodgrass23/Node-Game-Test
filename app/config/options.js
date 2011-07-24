@@ -10,8 +10,8 @@ exports = module.exports = function(env) {
       this.shortSession = 12 * 24 * 60 * 60 * 1000;    // We no longer have a short session option 1000 * 60 * 60 * 60         // 60 minutes
       this.reqTimeout = 30000;
       this.sessionKey = 'session';
-      this.host = 'http://localhost:3100';
-      this.port = 3100;
+      this.host = 'http://localhost';
+      this.port = 80;
       this.dumpExceptions = true;
       this.showStack = true;
       this.errorToHtml = true;
