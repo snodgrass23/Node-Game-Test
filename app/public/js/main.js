@@ -1,20 +1,28 @@
 $(document).ready(function(){
 
-  var row = 0
-  var col = 0
+  var row = 0;
+  var col = 0;
 
+  var maxrows = 5;
+  var maxcols = 5;
+  
+  var buildspeed = 200;
+  
+  var offset = 0;
+  var piecewidth = 230;
+  
   placePiece();
 
   function placePiece() {
     
     var pid = "r"+row+"c"+col;
     
-    var top = 220 * row - 10;
-    var left = 220 * col - 10;
+    var top = piecewidth * row - offset;
+    var left = piecewidth * col - offset;
     
     
-    $("body").append('<div id="'+pid+'" class="piece"></div>').find("#"+pid).animate({top: top, left: left}, 150, function() {
-      if (col >= 4) {
+    $("#gameboard").append('<div id="'+pid+'" class="piece"></div>').find("#"+pid).animate({top: top, left: left}, buildspeed, function() {
+      if (col >= maxcols - 1) {
         row++
         col = 0
       }
@@ -22,8 +30,9 @@ $(document).ready(function(){
         col++
       }
       
-      if (row >= 4) {
+      if (row >= maxrows - 1) {
         // stop placing pieces
+        $("#gameboard").draggable();
       }
       else {
         placePiece();
@@ -31,6 +40,10 @@ $(document).ready(function(){
       
     });
   }
+  
+  $("#zoomBtn").click(function(){
+    $("#gameboard").toggleClass("zoomin");
+  })
 
 
 })

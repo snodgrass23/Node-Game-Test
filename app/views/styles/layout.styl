@@ -1,27 +1,24 @@
 body
   background-color #000
-  position relative
+#gameboard
+  position absolute
+  top 0
+  left 0
   height 100%
   width 100%
+  display block
+  -webkit-transform: scale(.5);
+#gameboard.zoomin
+  -webkit-transition: all 2s ease-in;
+  -webkit-transform: scale(1);
+#zoomBtn
+  position absolute
+  top 10px
+  right 10px
 .piece
   position absolute
-  top 850px
-  left 50px
+  top -500px
+  left -500px
   height 250px
   width 250px
   background url(/img/tilepiece.png) no-repeat top left
-#p1
-  top 50px
-  left 50px
-#p2
-  top 50px
-  left 370px
-#p3
-  top 50px
-  left 690px
-#p4
-  top 210px
-  left 210px
-#p5
-  top 210px
-  left 530px
