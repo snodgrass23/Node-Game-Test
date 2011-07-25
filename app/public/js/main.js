@@ -3,12 +3,12 @@ $(document).ready(function(){
   var row = 1;
   var col = 1;
 
-  var maxrows = 7;
-  var maxcols = 4;
+  var maxrows = 10;
+  var maxcols = 5;
   
   var buildspeed = 100; // ms per piece
   
-  var offset = 250;
+  var offset = 300;
   var piecewidth = 370;  // 375 for gaps
   var pieceheight = 107; // 110 for gaps
   
@@ -45,6 +45,10 @@ $(document).ready(function(){
   
   $("#zoomBtn").click(function(){
     $("#gameboard").toggleClass("zoomin");
+  })
+  
+  $("#tiltBtn").click(function(){
+    $("#gameboard").toggleClass("tilt");
   })
 
 
