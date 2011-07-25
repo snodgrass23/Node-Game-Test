@@ -1,15 +1,16 @@
 $(document).ready(function(){
 
-  var row = 0;
-  var col = 0;
+  var row = 1;
+  var col = 1;
 
-  var maxrows = 5;
-  var maxcols = 5;
+  var maxrows = 7;
+  var maxcols = 4;
   
-  var buildspeed = 200;
+  var buildspeed = 100; // ms per piece
   
-  var offset = 0;
-  var piecewidth = 230;
+  var offset = 250;
+  var piecewidth = 370;  // 375 for gaps
+  var pieceheight = 107; // 110 for gaps
   
   placePiece();
 
@@ -17,8 +18,9 @@ $(document).ready(function(){
     
     var pid = "r"+row+"c"+col;
     
-    var top = piecewidth * row - offset;
-    var left = piecewidth * col - offset;
+    var top = pieceheight * row - offset;
+    var oddoffset = (row === 0 || row % 2 > 0) ? 0 : 1;
+    var left = (piecewidth * col - offset) + (oddoffset * piecewidth/2);
     
     
     $("#gameboard").append('<div id="'+pid+'" class="piece"></div>').find("#"+pid).animate({top: top, left: left}, buildspeed, function() {
@@ -30,7 +32,7 @@ $(document).ready(function(){
         col++
       }
       
-      if (row >= maxrows - 1) {
+      if (row > maxrows) {
         // stop placing pieces
         $("#gameboard").draggable();
       }
